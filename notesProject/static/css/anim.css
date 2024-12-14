@@ -1,0 +1,15 @@
+
+@keyframes animBg {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+.animBg {
+    transition: all 0.3s ease-in-out;
+    animation: animBg alternate ease-in 0.5s;
+}
