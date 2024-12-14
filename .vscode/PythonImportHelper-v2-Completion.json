@@ -1,0 +1,479 @@
+[
+    {
+        "label": "django.contrib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "notesProject.mongo",
+        "description": "notesProject.mongo",
+        "isExtraImport": true,
+        "detail": "notesProject.mongo",
+        "documentation": {}
+    },
+    {
+        "label": "validate_password",
+        "importPath": "django.contrib.auth.password_validation",
+        "description": "django.contrib.auth.password_validation",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.password_validation",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationError",
+        "importPath": "django.core.exceptions",
+        "description": "django.core.exceptions",
+        "isExtraImport": true,
+        "detail": "django.core.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "HttpRequest",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_by_email",
+        "importPath": "notesProject.Auth.models",
+        "description": "notesProject.Auth.models",
+        "isExtraImport": true,
+        "detail": "notesProject.Auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "AuthConfig",
+        "kind": 6,
+        "importPath": "notesProject.Auth.apps",
+        "description": "notesProject.Auth.apps",
+        "peekOfCode": "class AuthConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'Auth'",
+        "detail": "notesProject.Auth.apps",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_by_email",
+        "kind": 2,
+        "importPath": "notesProject.Auth.models",
+        "description": "notesProject.Auth.models",
+        "peekOfCode": "def get_user_by_email(email: str):\n    return db[\"users\"].find_one({\n        \"email\": email,\n    })\ndef check_password(password):\n    try:\n        validate_password(password)  # This checks the password\n        return \"Password is valid.\"\n    except ValidationError as e:\n        return f\"Password is invalid: {', '.join(e.messages)}\"",
+        "detail": "notesProject.Auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "check_password",
+        "kind": 2,
+        "importPath": "notesProject.Auth.models",
+        "description": "notesProject.Auth.models",
+        "peekOfCode": "def check_password(password):\n    try:\n        validate_password(password)  # This checks the password\n        return \"Password is valid.\"\n    except ValidationError as e:\n        return f\"Password is invalid: {', '.join(e.messages)}\"",
+        "detail": "notesProject.Auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "notesProject.Auth.urls",
+        "description": "notesProject.Auth.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"login/\", LoginPage, name=\"Login\"),\n    path(\"register/\", RegisterPage, name=\"Register\")\n]",
+        "detail": "notesProject.Auth.urls",
+        "documentation": {}
+    },
+    {
+        "label": "Login",
+        "kind": 2,
+        "importPath": "notesProject.Auth.views",
+        "description": "notesProject.Auth.views",
+        "peekOfCode": "def Login(request: HttpRequest):\n    pass \ndef LoginPage(request: HttpRequest):\n    if (request.method == \"POST\"):\n        Login(request)\n    return render(request, \"Login.html\")\ndef Register(request:HttpRequest):\n    errors = []\n    # validate email\n    email = request.POST.get(\"register_email\")",
+        "detail": "notesProject.Auth.views",
+        "documentation": {}
+    },
+    {
+        "label": "LoginPage",
+        "kind": 2,
+        "importPath": "notesProject.Auth.views",
+        "description": "notesProject.Auth.views",
+        "peekOfCode": "def LoginPage(request: HttpRequest):\n    if (request.method == \"POST\"):\n        Login(request)\n    return render(request, \"Login.html\")\ndef Register(request:HttpRequest):\n    errors = []\n    # validate email\n    email = request.POST.get(\"register_email\")\n    if (get_user_by_email(email)):\n        errors.append(\"Email already taken! \")",
+        "detail": "notesProject.Auth.views",
+        "documentation": {}
+    },
+    {
+        "label": "Register",
+        "kind": 2,
+        "importPath": "notesProject.Auth.views",
+        "description": "notesProject.Auth.views",
+        "peekOfCode": "def Register(request:HttpRequest):\n    errors = []\n    # validate email\n    email = request.POST.get(\"register_email\")\n    if (get_user_by_email(email)):\n        errors.append(\"Email already taken! \")\n        return errors    \n    password = request.POST.get(\"register_password\")\n    password_conferm = request.POST.get(\"register_password_confirm\")",
+        "detail": "notesProject.Auth.views",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterPage",
+        "kind": 2,
+        "importPath": "notesProject.Auth.views",
+        "description": "notesProject.Auth.views",
+        "peekOfCode": "def RegisterPage(request:HttpRequest):\n    errors = {}\n    if (request.method == \"POST\"):\n        errors = Register()\n    return render(request, \"Register.html\", {\n        \"errors\": errors\n    })",
+        "detail": "notesProject.Auth.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.asgi",
+        "description": "notesProject.notesProject.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "notesProject.notesProject.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-idw=byr*st^o)jf_7$lf-2zsctd51za_k(_+hy@w!%(tb*(oo*'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-idw=byr*st^o)jf_7$lf-2zsctd51za_k(_+hy@w!%(tb*(oo*'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'Auth'",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'Auth'\n]\nMIDDLEWARE = [",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'notesProject.urls'",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "ROOT_URLCONF = 'notesProject.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'notesProject.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Add the global static folder\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # Reference the global static directory",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Add the global static folder\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # Reference the global static directory\n]",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Add the global static folder\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # Reference the global static directory\n]\n# Default primary key field type",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Add the global static folder\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # Reference the global static directory\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Add the global static folder\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # Reference the global static directory\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # Reference the global static directory\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.settings",
+        "description": "notesProject.notesProject.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "notesProject.notesProject.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.urls",
+        "description": "notesProject.notesProject.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"auth/\", include(\"Auth.urls\"))\n]",
+        "detail": "notesProject.notesProject.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "notesProject.notesProject.wsgi",
+        "description": "notesProject.notesProject.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "notesProject.notesProject.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "notesProject.manage",
+        "description": "notesProject.manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'notesProject.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "notesProject.manage",
+        "documentation": {}
+    },
+    {
+        "label": "MONGO_URI",
+        "kind": 5,
+        "importPath": "notesProject.mongo",
+        "description": "notesProject.mongo",
+        "peekOfCode": "MONGO_URI = \"mongodb://localhost:27017\"\nDATABASE_NAME = \"notes\"\nclient = MongoClient(MONGO_URI)\ndb = client[DATABASE_NAME]",
+        "detail": "notesProject.mongo",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_NAME",
+        "kind": 5,
+        "importPath": "notesProject.mongo",
+        "description": "notesProject.mongo",
+        "peekOfCode": "DATABASE_NAME = \"notes\"\nclient = MongoClient(MONGO_URI)\ndb = client[DATABASE_NAME]",
+        "detail": "notesProject.mongo",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "notesProject.mongo",
+        "description": "notesProject.mongo",
+        "peekOfCode": "client = MongoClient(MONGO_URI)\ndb = client[DATABASE_NAME]",
+        "detail": "notesProject.mongo",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "notesProject.mongo",
+        "description": "notesProject.mongo",
+        "peekOfCode": "db = client[DATABASE_NAME]",
+        "detail": "notesProject.mongo",
+        "documentation": {}
+    }
+]
