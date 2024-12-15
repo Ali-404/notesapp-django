@@ -1,32 +1,49 @@
 from django.shortcuts import render,redirect
 from django.http import HttpRequest
-from .models import get_user_by_email,check_password,create_user
-# Create your views here.
-
+from django.contrib.auth.hashers import check_password as verify_pass
+from .models import get_user_by_email,check_password,create_user,serialize
 
 def Login(request: HttpRequest):
-    pass 
+    
+   
+    if request.method == "POST":
+        email = request.POST.get('login_email')
+        password = request.POST.get('login_password')
+        user = get_user_by_email(email)
+        if not user:
+            return "User not found"
+        if not verify_pass(password, user["password"]):
+           return "Password incorrect !"
 
+        request.session["user"] = serialize(user)
+        request.session["logged_in"] = True
+        return ""
 
 def LoginPage(request: HttpRequest):
+    
+    if (request.session.get("logged_in")):
+       return redirect("base")
+    
+    error = ""
     if (request.method == "POST"):
-        Login(request)
-        
-    return render(request, "Login.html")
+        error = Login(request)
+        if (not error or error == ""):
+            return redirect("base")
+    return render(request, "Login.html", {
+        "error": error
+    })
 
 
 
 
 def Register(request:HttpRequest):
-    error = ""
     
     
     # validate email
     email = request.POST.get("register_email")
     
     if (get_user_by_email(email)):
-        error = "Email already taken! "
-        return error    
+        return "Email already taken! "    
     
     
     
@@ -34,31 +51,29 @@ def Register(request:HttpRequest):
     
     valid,msg = check_password(password)
     if (not valid):
-        error = msg
-        return error
+        return msg
     
     
     password_conferm = request.POST.get("register_password_confirm")
     
     if (password != password_conferm):
-        error  = "Passwords do not match! "
-        return error
+        return "Passwords do not match! "
     
     
     # create user
     user = create_user(email, password)
     
     if (user):
-        error = ""
+        return ""
     else:
-        error = "There is an error !"
+        return "There is an error !"
     
-    return error
 
 
 def RegisterPage(request:HttpRequest):
     
-    
+    if (request.session.get("logged_in")):
+       return redirect("base")
     error = ""
     if (request.method == "POST"):
         error = Register(request)
@@ -70,3 +85,7 @@ def RegisterPage(request:HttpRequest):
 
 
 
+
+def LogoutPage(request:HttpRequest):
+    request.session.clear()
+    return redirect("Login")

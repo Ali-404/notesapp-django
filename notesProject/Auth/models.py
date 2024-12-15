@@ -1,7 +1,9 @@
 # from django.db import models
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
-from mongo import db, client
+from mongo import db
+from bson.objectid import ObjectId
+
 
 from datetime import datetime
 
@@ -13,7 +15,15 @@ def get_user_by_email(email: str):
         "email": email,
     })
     
-    
+
+
+def serialize(user):
+    return {
+        "id": str(ObjectId(user["_id"])),
+        "email": user["email"],
+        "password": user["password"],
+        "createdAt": str(user["createdAt"])
+    }
 
 
 
