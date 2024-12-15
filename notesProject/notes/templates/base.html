@@ -14,6 +14,21 @@
         
         {% endblock %}
     </div>
+
+
+    <!-- hadi container fo9 container o fixed ghayban fiha messages la siftna xi messsage -->
+    <div class="position-fixed top-0 vh-100 start-0 w-100 d-flex flex-column-reverse container " style="pointer-events: none;">
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="alert alert-{{msg.type}} alert-dismissible fade show" style="width: 300px;" role="alert">
+                    {{ msg.message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
