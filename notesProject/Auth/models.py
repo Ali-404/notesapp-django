@@ -1,7 +1,7 @@
 # from django.db import models
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
-from mongo import db,client
+from mongo import db, client
 
 from datetime import datetime
 
