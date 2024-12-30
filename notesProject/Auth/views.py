@@ -22,13 +22,13 @@ def Login(request: HttpRequest):
 def LoginPage(request: HttpRequest):
     
     if (request.session.get("logged_in")):
-       return redirect("base")
+       return redirect("home")
     
     error = ""
     if (request.method == "POST"):
         error = Login(request)
         if (not error or error == ""):
-            return redirect("base")
+            return redirect("home")
     return render(request, "Login.html", {
         "error": error
     })

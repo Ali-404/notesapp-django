@@ -3,24 +3,17 @@
 {% block title %} Home Page {% endblock %}
 
 {% block content %}
-<section class="position-relative p-3 d-flex flex-row align-items-center gap-2 flex-wrap justify-content-center overflow-auto h-100">
+<section class="animBg position-relative p-3 d-flex flex-row align-items-center gap-2 flex-wrap justify-content-center overflow-auto h-100">
+    {% if notes|length <= 0 %}
+        <small class="position-absolute start-50 top-50 translate-middle">You have 0 notes. Press + to create one</small>
+    {% endif %}
+    {% for i in notes %}
+
     {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    {% include 'blocknote.html' %}
-    <button class="position-fixed bottom-0 end-0  btn btn-warning icon-btn shadow" style="width: 50px; height: 50px; transform: translate(-150%,-90%);" >
+    
+    {% endfor %}
+    
+    <button class="position-fixed bottom-0 end-0  btn btn-warning icon-btn shadow animBg" style="width: 50px; height: 50px; transform: translate(-150%,-90%);" >
         +
     </button>
 </section>

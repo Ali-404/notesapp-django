@@ -1,3 +1,5 @@
-from django.db import models
-
+from mongo import db 
 # Create your models here.
+
+def getAllNotes():
+   return db["notes"].find()
