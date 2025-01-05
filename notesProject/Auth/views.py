@@ -2,7 +2,6 @@ from django.shortcuts import render,redirect
 from django.http import HttpRequest
 from django.contrib.auth.hashers import check_password as verify_pass
 from .models import get_user_by_email,check_password,create_user,serialize
-
 def Login(request: HttpRequest):
     
    
@@ -15,6 +14,7 @@ def Login(request: HttpRequest):
         if not verify_pass(password, user["password"]):
            return "Password incorrect !"
 
+        request.session["user_id"] = str(user["_id"])
         request.session["user"] = serialize(user)
         request.session["logged_in"] = True
         return ""

@@ -1,7 +1,30 @@
-<div class="d-flex flex-column  justify-content-evenly rounded-4 p-2 border border-black bg-warning" style="width: 240px; height: 300px;">
-    <div class="d-flex flex-column justify-content-evenly px-2">
-        <h2>title</h2>
-        <p2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sint aperiam cum consectetur praesentium doloremque hic quo autem nulla id! Laboriosam, ullam. Porro aut atque sunt velit, repudiandae rem officia?</p>
+<style>
+    .note{
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .note:hover {
+        transform: scale(1.05);
+    }
+
+    .title {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    
+</style>
+
+<script>
+    console.log("{{note}}")
+</script>
+
+<a href="/edit/{{note.id}}" class=" animBg text-black  text-decoration-none note d-flex flex-column  justify-content-evenly rounded-4 p-2 border border-black bg-warning" style="width: 200px; height: 300px; ">
+    <div class="d-flex flex-column h-100 gap-2 px-2">
+        <h4 class="title">{{ note.title }}</h4>
+        <div  style="font-size: 14px;" class="flex-fill overflow-auto" >{{ note.content }}</div>
+        <small class="blockquote-footer text-end ">{{ note.createdAt }}</small>
     </div>
-    <h6 class="text-end">11-04-2023</h6>
-</div>
+</a>

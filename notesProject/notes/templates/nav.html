@@ -1,7 +1,17 @@
 <header>
-    <nav class="p-2 d-flex flex-column flex-md-row align-items-center justify-content-around rounded-2 shadow bg-light border border-warning">
+    <nav class="position-relative p-2 d-flex flex-column flex-md-row align-items-center justify-content-around rounded-2 shadow bg-light border border-warning">
+        {% if request.resolver_match.url_name != 'home' %}
+        <a href="{% url 'home' %}" class="position-absolute top-0 start-0 m-2 btn btn-outline-danger">Back </a>
+        {% endif %}
         <h1 class="text-black" style="font-family: Dancing Script,  cursive;">Django Notepad</h1>
+        
+        {% if request.resolver_match.url_name == 'home'  %}
         <input class="form-control  w-50" type="search" placeholder="Search...">
+        {% elif request.resolver_match.url_name == 'edit'  %}
+        <div>{{ note.title }}</div>
+        {% else %}
+        <div>New Note</div>
+        {% endif %}
         <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-3">
             <h6 class="mt-2">{{ user.email }}</h6>
             <a class="btn btn-danger" href="{% url 'Logout' %}">Logout</a>

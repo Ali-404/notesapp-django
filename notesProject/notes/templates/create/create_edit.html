@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} Note #1 {% endblock %}
+
+{% block content %}
+<form class="h-100 d-flex flex-column gap-2 container py-3" method="post" 
+
+    {% if not note %}
+
+    action="{% url 'create' %}"
+    
+    {% else %}
+    
+    action=""
+
+    {% endif %}
+    
+    >
+    
+    
+    {% csrf_token  %}
+
+    <input name="title" required class="form-control shadow-sm" type="text" placeholder="Title .." value="{{note.title}}" >
+   
+    <textarea name="content"  required class="form-control flex-fill  shadow-sm" style="resize: none;" placeholder="type here .." >{{note.content}}</textarea>
+    <div class="d-flex gap-3 flex-wrap">
+        <button class="btn btn-warning flex-fill shadow" type="submit">
+            {% if note %}
+            Save Changes 
+            {% else %}
+            Create
+            {% endif %}
+        </button>
+        {% if note %}
+            <a class="btn btn-danger shadow" href="/delete/{{note.id}}">🧺 Delete</a>
+        {% endif %}
+    </div>
+</form>
+{% endblock %}
