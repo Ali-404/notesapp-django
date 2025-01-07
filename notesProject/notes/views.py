@@ -1,14 +1,20 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
 from .models import getAllNotes,createNote,getNoteById,updateNote,deleteNote
 
-def home(request):
+def home(request: HttpResponse):
     if (not request.session.get("user")):
         return redirect("Login")
     
     notes = getAllNotes(request.session.get("user_id"))
+    
+    # check search
+    search_query = request.GET.get("search_query")
+    if (search_query):
+        notes = [i for i in notes if search_query in i["title"] or search_query in i["content"] ]
+    
     if (len(notes) <= 0):
         notes = None
-    return render(request, "home.html",{"user": request.session.get("user"), "notes": notes})
+    return render(request, "home.html",{"user": request.session.get("user"), "notes": notes, "search_query": search_query or ""})
 
 
 

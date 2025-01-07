@@ -1,12 +1,15 @@
 <header>
-    <nav class="position-relative p-2 d-flex flex-column flex-md-row align-items-center justify-content-around rounded-2 shadow bg-light border border-warning">
+    <nav class="position-relative p-2 d-flex flex-column flex-md-row align-items-center justify-content-around rounded-2 shadow bg-light border border-warning gap-3">
         {% if request.resolver_match.url_name != 'home' %}
         <a href="{% url 'home' %}" class="position-absolute top-0 start-0 m-2 btn btn-outline-danger">Back </a>
         {% endif %}
         <h1 class="text-black" style="font-family: Dancing Script,  cursive;">Django Notepad</h1>
         
         {% if request.resolver_match.url_name == 'home'  %}
-        <input class="form-control  w-50" type="search" placeholder="Search...">
+        <form class="d-flex gap-1 form-control " style="flex:0.7" >
+            <input value="{{search_query}}" name="search_query" class="flex-fill border-0 " style="outline: none;" type="search" placeholder="Search..." onclick="search">
+            <button class="btn btn-warning" type="submit">🔍</button>
+        </form>
         {% elif request.resolver_match.url_name == 'edit'  %}
         <div>{{ note.title }}</div>
         {% else %}
@@ -18,3 +21,10 @@
         </div>
     </nav>
 </header>
+
+
+<script>
+    function search(e){
+        e.preventDefault();
+    }
+</script>
