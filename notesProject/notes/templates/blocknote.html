@@ -10,8 +10,8 @@
     }
 
     .title {
-        text-overflow: ellipsis;
         white-space: nowrap;
+        max-width: 100%;
     }
 
     
@@ -22,9 +22,9 @@
 </script>
 
 <a href="/edit/{{note.id}}" class=" animBg text-black  text-decoration-none note d-flex flex-column  justify-content-evenly rounded-4 p-2 border border-black bg-warning" style="width: 200px; height: 300px; ">
-    <div class="d-flex flex-column h-100 gap-2 px-2">
+    <div class="d-flex flex-column h-100 gap-2 px-2 overflow-hidden">
         <h4 class="title">{{ note.title }}</h4>
         <div  style="font-size: 14px;" class="flex-fill overflow-auto" >{{ note.content }}</div>
-        <small class="blockquote-footer text-end ">{{ note.createdAt }}</small>
+        <small class="blockquote-footer text-end mt-2 ">{{ note.createdAt }}</small>
     </div>
 </a>
