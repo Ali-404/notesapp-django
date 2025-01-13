@@ -8,9 +8,9 @@ def home(request: HttpResponse):
     notes = getAllNotes(request.session.get("user_id"))
     
     # check search
-    search_query = request.GET.get("search_query")
+    search_query:str|None = request.GET.get("search_query")
     if (search_query):
-        notes = [i for i in notes if search_query in i["title"] or search_query in i["content"] ]
+        notes = [i for i in notes if search_query.lower() in i["title"].lower() or search_query.lower() in i["content"].lower() ]
     
     if (len(notes) <= 0):
         notes = None
